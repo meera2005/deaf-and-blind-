@@ -1,2 +1,1 @@
-# deaf-and-blind-
-A communication platform for conversion between deaf and blind person
+A project to extract data from a medical report in pdf format , extra
