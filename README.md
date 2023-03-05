@@ -16,7 +16,7 @@ The idea raised to our mind as we found one of out parents struggling to underst
 We developed a python code to extract the data from pdf and used open AI to find suggestions . We finally made a front end using html and css and connected the python codes using flask .
 Currently we are only able to analyse blood and urine samples and that also from tables only. In future we are planning to make necessary changes so that any kind of medical report can be accessed.
 We are also planning to help user to analyse their health condition by individually giving their medical test results. We have made the initial design only. The very next step would be to work on it.
-
+Please note: The phase of uploading the file in the upload section is not visible in the video due to some technical issue.
 ## STACKS  USED
 
 1.HTML, CSS, Javascript
