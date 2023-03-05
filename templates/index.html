@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        #top {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 50px;
+          background-color: #ccc;
+          text-align: center;
+          line-height: 50px;
+          cursor: pointer;
+        }
+        
+        #bottom {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 50px;
+          background-color: #ccc;
+          text-align: center;
+          line-height: 50px;
+          cursor: pointer;
+        }
+      </style>
+      <script>
+        function scrollToTop() {
+          window.scrollBy({
+            top: -100,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+        
+        function scrollToBottom() {
+          window.scrollBy({
+            top: 100,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      </script>
+</head>
+<body>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <div class="container">
+
+        <div class="heading">
+            <h1 class="title-name">Medical Report Analyzer</h1>
+            
+            <div class="text-para">
+              <p style="font-size: 24px;">System that extracts essential data from medical reports and provides patients with information about their health condition</p>
+            </div>
+        </div>
+        <div class="gradient-div">
+        <div style="display: flex;" class="first-section">
+            <div style="flex: 1;">
+                    <button onclick="openWindow()" type="button" class="btn btn-primary btn-rounded btn-lg" id="first-button">Details</button>
+                    <div id="myWindow">
+                      <form onsubmit="submitForm(); return false;">
+                        <label for="inputName">Blood sugar rate:</label>
+                        <input type="text" id="inputName" name="name"><br>
+                        <label for="inputName">Blood Pressure rate:</label>
+                        <input type="email" id="inputEmail" name="email" ><br>
+                        <label for="inputEmail">Heamoglobin count:</label>
+                        <input type="email" id="inputEmail" name="email" ><br>
+                        <label for="inputEmail">Platelet count:</label>
+                        <input type="email" id="inputEmail" name="email" ><br>
+                        <label for="inputEmail">WBC count:</label>
+                        <input type="email" id="inputEmail" name="email" ><br>
+                        <label for="inputEmail">Urine(sugar):</label>
+                        <input type="email" id="inputEmail" name="email" ><br>
+                        <button type="submit">Submit</button>
+                      </form>
+                    </div>
+            </div>
+            <div style="flex: 1;" class="second-section">
+                    <button onclick="openPdf()" class="sec-button" style="margin-left: 300px;" >Drop Here</button>
+                
+                    
+                    <div id="myPdf">
+                        <form action="http://127.0.0.1:5000" method="POST" enctype="multipart/form-data">
+                            <label for="pdf-file" class="primary" style="font-size: large; font-weight: 100;">Choose a PDF file to upload:</label>
+                            <input type="file" id="pdf-file" name="pdf-file">
+                            <input type="submit" value="Upload">
+                            <!-- <button onclick="closePopupWindow()">close window</button> -->
+                          </form>
+                          
+                    </div>
+            </div>
+
+
+          </div>
+          
+          <!-- <div class="display-div">
+            <textarea id="my-textArea" class="string-div"></textarea>
+          </div> -->
+          <div class="output-div">
+            <div class="inner-div">{{my_string}}</div>
+           </div>
+          <script>
+            const xhr=new XMLHttpRequest();
+            xhr.open('GET','index.html');
+            xhr.onload=function(){
+              if(xhr.status===200)
+              {
+                const response=JSON.parse(xhr.responseText);
+                document.getElementById('my-textArea').textContent=response.string;
+              }
+            };
+            xhr.send();
+          </script>
+
+          
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
