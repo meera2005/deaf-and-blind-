@@ -19,8 +19,8 @@ We are also planning to help user to analyse their health condition by individua
 
 ## STACKS  USED
 
-1.	HTML, CSS
-2.	Python, Flask
+1.HTML, CSS, Javascript 
+2.Python, Flask
 
 ## TEAM MEMBERS
 
